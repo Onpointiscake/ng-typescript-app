@@ -1,4 +1,5 @@
 import { Router } from 'express'
+import {componentTwoController} from '../controllers/componentTwoController'
 
 class ComponentTwoRoutes {
     public router: Router = Router()
@@ -8,9 +9,11 @@ class ComponentTwoRoutes {
     }
 
     config(): void {
-        this.router.get('/', (req, res) => {
-            res.send('Hello from componentTwo')
-        })
+        this.router.get('/', componentTwoController.list)
+        this.router.get('/:id', componentTwoController.getOne)
+        this.router.post('/', componentTwoController.create)
+        this.router.put('/:id', componentTwoController.put)
+        this.router.delete('/:id', componentTwoController.delete)
     }
 }
 
