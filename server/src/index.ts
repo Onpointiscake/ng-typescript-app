@@ -23,8 +23,8 @@ class Server {
     }
 
     routes(): void {
-        this.app.use(indexRoutes)
-        this.app.use('/componentTwo', componentTwoRoutes)
+        this.app.use('/', indexRoutes)
+        this.app.use('/api/componentTwo', componentTwoRoutes)
     }
 
     start(): void {
