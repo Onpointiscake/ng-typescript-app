@@ -7,6 +7,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { HotelFormComponent } from './components/hotel-form/hotel-form.component';
 import { HotelListComponent } from './components/hotel-list/hotel-list.component';
 
+import { HotelsService } from './services/hotels.service'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,9 @@ import { HotelListComponent } from './components/hotel-list/hotel-list.component
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    HotelsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
